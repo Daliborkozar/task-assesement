@@ -8,7 +8,9 @@ export const theme = createTheme({
     secondary: {
       main: "#E35044",
     },
-    redish: "#E35044"
+    sub: "#577F95"
+    
+    
   },
 
   typography: {
@@ -62,6 +64,18 @@ export const theme = createTheme({
       fontSize: "0.7rem",
       fontWeight: "600",
     },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+        },
+      },
+    },
+  },
+  shape: {
+    borderRadius: 0,
   },
 
 });

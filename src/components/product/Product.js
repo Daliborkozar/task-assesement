@@ -1,14 +1,23 @@
 import React from "react";
+import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
+import { ProductImages } from "./ProductImages";
+import { ProductActionArea } from "./ProductActionArea";
 
-const Product = () => {
+const ProductWrapper = styled(Grid)({
+  padding: 30,
+
+});
+
+export const Product = () => {
   return (
-    <Grid container>
-      <Grid item></Grid>
-      <Grid item></Grid>
-      <Grid item></Grid>
-    </Grid>
+    <ProductWrapper container spacing={2}>
+      <Grid item >
+        <ProductImages />
+      </Grid>
+      <Grid item>
+        <ProductActionArea />
+      </Grid>
+    </ProductWrapper>
   );
 };
-
-export default Product;

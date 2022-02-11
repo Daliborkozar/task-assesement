@@ -28,7 +28,9 @@ const AppBarContainer = styled(AppBar)({
   borderBottom: "1px solid #E9E9E9",
 });
 
-const Navbar = (props) => {
+const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
+
+export const Navbar = (props) => {
   return (
     <>
       <ElevationScroll {...props}>
@@ -39,7 +41,7 @@ const Navbar = (props) => {
                 <Typography
                   variant="h6"
                   component="div"
-                  color="redish"
+                  color="secondary"
                   sx={{
                     display: { xs: "none", md: "block" },
                   }}
@@ -54,9 +56,11 @@ const Navbar = (props) => {
             </Grid>
           </Toolbar>
         </AppBarContainer>
+        
       </ElevationScroll>
+      <Offset />
     </>
   );
 };
 
-export default Navbar;
+
