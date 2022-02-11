@@ -2,52 +2,50 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Grid, Box, Divider, Stack, Chip, Typography } from "@mui/material";
 import { TitleComponent } from "../UI/TitleComponent";
+import { BulletList } from "../UI/BulletList";
+import { PriceList } from "../UI/PriceBreaks";
 
-const Wrapper = styled(Box)({
+const Wrapper = styled(Grid)({
+  display: "flex",
+  flexDirection: "column",
   backgroundColor: "#FFFFFF",
   padding: 20,
-  width: "100%",
-  minWidth: 360,
-  maxWidth: 600,
-
+  minWidth: 300,
 });
 
 const TitleContainer = styled(Grid)({
   marginBottom: 10,
-})
+});
+
+const BoxMargin = styled(Box)({
+  marginTop: 20,
+});
 
 export const ProductPricing = () => {
   return (
-    <Wrapper >
+    <Wrapper container>
       <Box>
         <TitleContainer container>
-          <Grid item >
+          <Grid item>
             <TitleComponent>PRICING & SHIPPING</TitleComponent>
           </Grid>
         </TitleContainer>
       </Box>
       <Divider />
-      <Box>
-      <Typography  variant="body1" color="#A9A9A9">
-          Features
+      <BoxMargin>
+        <BulletList />
+        <BulletList />
+        <BulletList />
+      </BoxMargin>
+      <BoxMargin>
+        <Typography variant="h6" color="#A9A9A9">
+          Price Breaks
         </Typography>
-        
-      </Box>
+      </BoxMargin>
       <Box>
-      <Typography  variant="body1" color="#A9A9A9">
-          Attachements
-        </Typography>
-      </Box>
-      <Box>
-        <Typography  variant="body1" color="#A9A9A9">
-          Keywords
-        </Typography>
-        <Stack direction="row" spacing={1}>
-          <Chip label="Extra Soft" color="primary" />
-          <Chip color="primary" label="Soft" />
-          <Chip label="Medium" color="primary"/>
-          <Chip label="Hard" color="primary"/>
-        </Stack>
+        <PriceList />
+        <PriceList />
+        <PriceList />
       </Box>
     </Wrapper>
   );

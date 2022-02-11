@@ -8,8 +8,8 @@ export const theme = createTheme({
     secondary: {
       main: "#E35044",
     },
-    sub: "#577F95"
-    
+    sub: "#577F95",
+    graydark: '#a9a9a9'
     
   },
 
@@ -43,12 +43,12 @@ export const theme = createTheme({
     },
 
     body1: {
-      fontSize: "0.8rem",
+      fontSize: "0.6rem",
       fontWeight: "600",
     },
     body2: {
       color: "#247185",
-      fontSize: "0.7rem",
+      fontSize: "0.5rem",
       fontWeight: 700,
     },
     caption: {
