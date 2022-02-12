@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Grid, Typography, Box } from "@mui/material";
 import styled from "@emotion/styled";
 import { useSelector } from "react-redux";
@@ -6,7 +6,6 @@ import { RatingStars } from "../UI/Rating";
 import DiscountIcon from "../../resources/icons/discount.svg";
 import { AddToCart } from "./addToCart/AddToCart";
 import data from "../../data.json";
-
 
 const ProductWrapper = styled(Grid)({
   flexDirection: "column",
@@ -28,8 +27,28 @@ const PriceContainer = styled(Grid)({
   alignItems: "center",
 });
 
-export const ProductActionArea = () => {
+export const ProductActionArea = ({ cartAction }) => {
   const { product } = useSelector((state) => state.product);
+
+  console.log(cartAction);
+  const containerRef = useRef(null);
+
+  const callbackFunction = (entries) => {
+    const [entry] = entries;
+    cartAction(entry.isIntersecting);
+  };
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0,
+  };
+  useEffect(() => {
+    const observer = new IntersectionObserver(callbackFunction, options);
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => {
+      if (containerRef.current) observer.unobserve(containerRef.current);
+    };
+  }, [containerRef, options]);
 
   return (
     <ProductWrapper container>
@@ -68,7 +87,7 @@ export const ProductActionArea = () => {
             </Grid>
           </Grid>
 
-          <Grid item>
+          <Grid item ref={containerRef}>
             <AddToCart unit={product.article.unit} />
           </Grid>
         </>

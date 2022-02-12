@@ -34,8 +34,8 @@ const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
 export const Navbar = (props) => {
   const { product } = useSelector((state) => state.product);
- 
 
+  const { cartAction } = props;
   return (
     <>
       <ElevationScroll {...props}>
@@ -51,12 +51,14 @@ export const Navbar = (props) => {
                     display: { xs: "none", sm: "none", md: "block" },
                   }}
                 >
-                 {product?.article?.description_short}
+                  {product?.article?.description_short}
                 </Typography>
               </Grid>
-              <Grid item>
-                <AddToCart unit={product?.article?.unit}/>
-              </Grid>
+              {!cartAction ? (
+                <Grid item>
+                  <AddToCart unit={product?.article?.unit} />
+                </Grid>
+              ) : null}
               <Grid item>
                 <NavbarIcons />
               </Grid>

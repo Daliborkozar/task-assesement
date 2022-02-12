@@ -8,14 +8,14 @@ const ProductWrapper = styled(Grid)({
   padding: 30,
 });
 
-export const Product = () => {
+export const Product = ({ cartAction }) => {
   return (
     <ProductWrapper container spacing={2}>
       <Grid item>
         <ProductImages />
       </Grid>
       <Grid item>
-        <ProductActionArea />
+        <ProductActionArea cartAction={cartAction} />
       </Grid>
     </ProductWrapper>
   );
