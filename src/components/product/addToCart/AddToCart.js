@@ -25,7 +25,7 @@ const AddWrapper = styled(Grid)({
 export const AddToCart = ({ unit }) => {
   const [qty, setQty] = useState("1");
   const dispatch = useDispatch();
- console.log(qty)
+  console.log(qty);
   const inputHandle = (e) => {
     setQty(e.target.value);
   };

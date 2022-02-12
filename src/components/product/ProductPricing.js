@@ -12,7 +12,7 @@ const Wrapper = styled(Grid)({
   backgroundColor: "#FFFFFF",
   padding: 20,
   minWidth: 300,
-  height: "100%"
+  height: "100%",
 });
 
 const TitleContainer = styled(Grid)({

@@ -35,7 +35,6 @@ export const addToCart = (quantity) => {
 };
 
 export const fetchProduct = () => async (dispatch) => {
-  
   try {
     dispatch(fetchProductRequest());
     const { data } = await axios.get("/data/data.json");
