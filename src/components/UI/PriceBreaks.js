@@ -13,11 +13,17 @@ const PriceContainer = styled(Box)({
     width: 'fit-content'
 })
 
-export const PriceList = () => {
+const DiscountPrice = styled(Typography)({
+    marginLeft: 10
+})
+
+export const PriceList = ({qty,total, disc, currency, unit }) => {
+    const discount = (total - disc) / qty
+    console.log(discount)
   return (
-    <PriceContainer>
-        <Typography variant="body1" >Ex 20 PCE</Typography>
-        <Typography variant="body1" >10 EUR/PCE</Typography>
+    <PriceContainer rowSpacing={2}>
+        <Typography variant="body1" >{`ex ${qty} ${unit} `}</Typography>
+        <DiscountPrice variant="body1" >{`${discount} ${currency}/${unit}`}</DiscountPrice>
     </PriceContainer>
   )
 }

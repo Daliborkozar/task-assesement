@@ -15,11 +15,11 @@ const BulletContainer = styled(Box)({
     padding: 10,
 })
 
-export const AttachementList = () => {
+export const AttachementList = ({fileName}) => {
   return (
     <BulletContainer>
         <AttachImg src={AttachmentIcon} />
-        <Typography variant="body1" color="#327189">Data sheet 101</Typography>
+        <Typography variant="body1" color="#327189">{fileName}</Typography>
     </BulletContainer>
   )
 }
