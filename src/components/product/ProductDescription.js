@@ -14,7 +14,7 @@ const WrapperContainer = styled(Grid)({
 
 export const ProductDescription = () => {
   const { product } = useSelector((state) => state.product);
-  
+
   return (
     <WrapperContainer container spacing={2}>
       {product?.article && (

@@ -33,7 +33,6 @@ const BoxMargin = styled(Box)({
 
 export const ProductDetails = () => {
   const { product } = useSelector((state) => state.product);
-  
 
   return (
     <Wrapper>

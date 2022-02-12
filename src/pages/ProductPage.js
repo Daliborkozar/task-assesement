@@ -4,7 +4,7 @@ import { Product } from "../components/product/Product";
 import { ProductDescription } from "../components/product/ProductDescription";
 import { fetchProduct } from "../Redux/actions/productActions";
 
-export const ProductPage = ({cartAction}) => {
+export const ProductPage = ({ cartAction }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export const ProductPage = ({cartAction}) => {
 
   return (
     <>
-      <Product cartAction={cartAction}/>
+      <Product cartAction={cartAction} />
       <ProductDescription />
     </>
   );
