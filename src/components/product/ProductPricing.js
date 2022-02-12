@@ -4,6 +4,7 @@ import { Grid, Box, Divider, Stack, Chip, Typography } from "@mui/material";
 import { TitleComponent } from "../UI/TitleComponent";
 import { BulletList } from "../UI/BulletList";
 import { PriceList } from "../UI/PriceBreaks";
+import data from '../../data.json'
 
 const Wrapper = styled(Grid)({
   display: "flex",

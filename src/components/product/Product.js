@@ -6,13 +6,12 @@ import { ProductActionArea } from "./ProductActionArea";
 
 const ProductWrapper = styled(Grid)({
   padding: 30,
-
 });
 
 export const Product = () => {
   return (
     <ProductWrapper container spacing={2}>
-      <Grid item >
+      <Grid item>
         <ProductImages />
       </Grid>
       <Grid item>

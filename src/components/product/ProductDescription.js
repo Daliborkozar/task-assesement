@@ -3,7 +3,9 @@ import styled from "@emotion/styled";
 import { TitleComponent } from "../UI/TitleComponent";
 import { Typography, Grid } from "@mui/material";
 import { ProductDetails } from "./ProductDetails";
-import { ProductPricing } from "./ProductPricing"
+import { ProductPricing } from "./ProductPricing";
+import data from "../../data.json";
+import { useSelector } from "react-redux";
 
 const WrapperContainer = styled(Grid)({
   background: "#EFEFEF",
@@ -11,43 +13,32 @@ const WrapperContainer = styled(Grid)({
 });
 
 export const ProductDescription = () => {
+  const { product } = useSelector((state) => state.product);
+  
   return (
     <WrapperContainer container spacing={2}>
-      <Grid item xs={12}>
-        <TitleComponent>DESCRIPTION</TitleComponent>
-      </Grid>
-      <Grid item xs={12} md={12} lg={9}>
-        <Typography>
-          Maecenas pretium mi a ex lacinia volutpat. Cras gravida odio ut libero
-          blandit ornare. Pellentesque et tempus lacus, eu viverra orci. Quisque
-          suscipit felis vitae ligula finibus efficitur. Sed in fringilla nulla.
-          Sed dictum tortor et lectus porta, sit amet rhoncus sem consectetur.
-          Duis eleifend lectus id scelerisque auctor. Morbi posuere arcu lacus,
-          ac euismod nulla placerat nec. Proin et accumsan nisl. Sed imperdiet
-          lacus ac commodo pharetra.\n\nSuspendisse et dui ornare, laoreet
-          mauris vel, ullamcorper nunc. Suspendisse a libero id justo
-          condimentum fermentum non id ex. Phasellus aliquam magna ac eleifend
-          molestie. Aliquam tincidunt elit non libero posuere, a feugiat orci
-          gravida. Donec tempor urna in nisl aliquet convallis.\n\nDuis nec
-          vestibulum odio. Maecenas lobortis sit amet nunc ac porttitor.
-          Maecenas ultrices urna sed mattis faucibus. Phasellus dui turpis,
-          mattis eget lectus a, volutpat sagittis diam. Vestibulum dictum
-          efficitur magna nec hendrerit. Proin a cursus sapien, rhoncus viverra
-          lacus. Nullam commodo dapibus turpis, at sagittis tellus tincidunt eu.
-          Fusce viverra porta leo. Vivamus in ipsum nec elit tincidunt
-          tristique.
-        </Typography>
-      </Grid>
-      <Grid item xs={12} md={12} lg={12}>
-        <Grid container spacing={2}>
-          <Grid item>
-            <ProductDetails />
+      {product?.article && (
+        <>
+          <Grid item xs={12}>
+            <TitleComponent>DESCRIPTION</TitleComponent>
           </Grid>
-          <Grid item>
-            <ProductPricing />
+          <Grid item xs={12} md={12} lg={9}>
+            <Typography variant="h6" color="#696969">
+              {product.article.description_long}
+            </Typography>
           </Grid>
-        </Grid>
-      </Grid>
+          <Grid item xs={12} md={12} lg={12}>
+            <Grid container spacing={2}>
+              <Grid item>
+                <ProductDetails />
+              </Grid>
+              <Grid item>
+                <ProductPricing />
+              </Grid>
+            </Grid>
+          </Grid>
+        </>
+      )}
     </WrapperContainer>
   );
 };

@@ -4,6 +4,7 @@ import { Grid, Box, Divider, Stack, Chip, Typography } from "@mui/material";
 import { TitleComponent } from "../UI/TitleComponent";
 import { AttachementList } from "../UI/AttachmentList";
 import { BulletList } from "../UI/BulletList";
+import { useSelector } from "react-redux";
 
 const Wrapper = styled(Box)({
   display: "flex",
@@ -31,6 +32,9 @@ const BoxMargin = styled(Box)({
 });
 
 export const ProductDetails = () => {
+  const { product } = useSelector((state) => state.product);
+  console.log(product.article);
+
   return (
     <Wrapper>
       <Box>
@@ -45,8 +49,9 @@ export const ProductDetails = () => {
         <Typography variant="h6" color="#A9A9A9">
           Features
         </Typography>
-        <BulletList />
-        <BulletList />
+        {Object.entries(product.article.features).map((item, i) => (
+          <BulletList key={i} feature={item[0]} val={item[1]} />
+        ))}
       </BoxMargin>
       <BoxMargin>
         <Typography variant="h6" color="#A9A9A9">

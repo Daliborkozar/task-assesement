@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import {
   AppBar,
   useScrollTrigger,
@@ -8,6 +9,7 @@ import {
 } from "@mui/material";
 import styled from "@emotion/styled";
 import { NavbarIcons } from "./NavbarIcons";
+import { AddToCart } from "../product/addToCart/AddToCart";
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -28,27 +30,32 @@ const AppBarContainer = styled(AppBar)({
   borderBottom: "1px solid #E9E9E9",
 });
 
-const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
+const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
 export const Navbar = (props) => {
+  const { product } = useSelector((state) => state.product);
+ 
+
   return (
     <>
       <ElevationScroll {...props}>
         <AppBarContainer>
           <Toolbar>
-            <Grid container justifyContent="space-between">
+            <Grid container justifyContent="space-between" alignItems="center">
               <Grid item>
                 <Typography
                   variant="h6"
                   component="div"
                   color="secondary"
                   sx={{
-                    display: { xs: "none", md: "block" },
+                    display: { xs: "none", sm: "none", md: "block" },
                   }}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore
+                 {product?.article?.description_short}
                 </Typography>
+              </Grid>
+              <Grid item>
+                <AddToCart />
               </Grid>
               <Grid item>
                 <NavbarIcons />
@@ -56,11 +63,8 @@ export const Navbar = (props) => {
             </Grid>
           </Toolbar>
         </AppBarContainer>
-        
       </ElevationScroll>
       <Offset />
     </>
   );
 };
-
-
