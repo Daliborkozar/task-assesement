@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar } from "./components/navbar/Navbar";
 import { ProductPage } from "./pages/ProductPage";
 
 const App = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleVisibility = (visible) => {
+    setIsVisible(visible);
+  };
+
   return (
-    <div>
-      <Navbar />
-      <ProductPage />
-    </div>
+    <>
+      <Navbar cartAction={isVisible} />
+      <ProductPage cartAction={handleVisibility} />
+    </>
   );
 };
 
