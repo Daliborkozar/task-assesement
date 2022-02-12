@@ -29,10 +29,10 @@ export const ProductDescription = () => {
           </Grid>
           <Grid item xs={12} md={12} lg={12}>
             <Grid container spacing={2}>
-              <Grid item>
+              <Grid item xs={12} sm={6} md={5}>
                 <ProductDetails />
               </Grid>
-              <Grid item>
+              <Grid item xs={12} sm={6} md={5}>
                 <ProductPricing />
               </Grid>
             </Grid>

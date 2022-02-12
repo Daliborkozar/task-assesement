@@ -5,13 +5,13 @@ import { Grid, Typography, Box } from "@mui/material";
 import AttachmentIcon from "../../resources/icons/attachment.svg";
 
 const AttachImg = styled("img")({
-  height: 20,
+  height: 15,
   marginRight: 5,
 });
 
 const BulletContainer = styled(Box)({
   display: "flex",
-  padding: 10,
+  padding: 5,
 });
 
 export const AttachementList = ({ fileName }) => {

@@ -12,6 +12,7 @@ const ProductWrapper = styled(Grid)({
   height: "100%",
   justifyContent: "space-between",
   maxWidth: 500,
+  
 });
 
 const SupplierTitle = styled(Typography)({
