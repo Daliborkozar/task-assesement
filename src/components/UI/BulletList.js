@@ -11,12 +11,12 @@ const BulletContainer = styled(Box)({
     padding: 5
 })
 
-export const BulletList = () => {
+export const BulletList = ({feature, val}) => {
   return (
     <BulletContainer>
         <CircleIcon fontSize='1' />
-        <Typography variant="body1" color="#A9A9A9">bullet text:</Typography>
-        <Typography variant="body1">20bla</Typography>
+        <Typography variant="body1" color="#A9A9A9">{feature}</Typography>
+        <Typography variant="body1">{val}</Typography>
     </BulletContainer>
   )
 }

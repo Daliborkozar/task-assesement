@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { Grid, Button, TextField, Typography } from "@mui/material";
-
+import { useDispatch } from "react-redux";
 import AddIcon from "../../../resources/icons/add.svg";
+import { addToCart } from "../../../Redux/actions/productActions";
 
 const AddIconStyle = styled("img")({
   height: 20,
@@ -14,35 +15,38 @@ const InputStyle = styled(TextField)({
 });
 
 const PCEstyle = styled(Typography)({
-    width: 50
-})
+  width: 50,
+});
 
 const AddWrapper = styled(Grid)({
-    alignItems: 'center',
-    marginTop: 20
-})
+  alignItems: "center",
+});
 
-export const AddToCart = () => {
-  const [quantity, setQuantity] = useState("1");
+export const AddToCart = ({ unit }) => {
+  const [qty, setQty] = useState("1");
+  const dispatch = useDispatch();
+ console.log(qty)
+  const inputHandle = (e) => {
+    setQty(e.target.value);
+  };
 
-  const handleQuantity = (e) => {
-    setQuantity(e.target.value);
+  const handleQuantity = () => {
+    dispatch(addToCart(qty));
   };
   return (
     <AddWrapper container alignItems="center">
       <InputStyle
         size="small"
         type="number"
-        onChange={handleQuantity}
-        value={quantity}
+        onChange={inputHandle}
+        value={qty}
       />
-      <PCEstyle variant="h5">PCE</PCEstyle>
+      <PCEstyle variant="h5">{unit}</PCEstyle>
       <Button
         variant="contained"
         color="secondary"
-        
         startIcon={<AddIconStyle src={AddIcon} />}
-        //onClick={}
+        onClick={handleQuantity}
       >
         add to cart
       </Button>
