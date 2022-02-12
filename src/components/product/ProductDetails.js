@@ -13,6 +13,7 @@ const Wrapper = styled(Box)({
   padding: 20,
   minWidth: 300,
   height: "100%",
+  width:'100%'
 });
 
 const TitleContainer = styled(Grid)({
@@ -69,6 +70,7 @@ export const ProductDetails = () => {
             <ChipStyle
               key={tag}
               label={<ChipLabelStyle>{tag}</ChipLabelStyle>}
+              size="small"
             />
           ))}
         </Stack>

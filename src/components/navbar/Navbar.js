@@ -55,7 +55,7 @@ export const Navbar = (props) => {
                 </Typography>
               </Grid>
               {!cartAction ? (
-                <Grid item>
+                <Grid item >
                   <AddToCart unit={product?.article?.unit} />
                 </Grid>
               ) : null}

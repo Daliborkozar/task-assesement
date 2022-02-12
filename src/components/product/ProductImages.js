@@ -4,7 +4,11 @@ import { Grid } from "@mui/material";
 import ProductImg from "../../resources/icons/package.svg";
 import ZoomIcon from "../../resources/icons/zoom-in.svg";
 
-const ContentWrapper = styled(Grid)({});
+const ContentWrapper = styled(Grid)(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column-reverse",
+  },
+}));
 
 const SmallImage = styled("img")({
   height: 70,
@@ -12,9 +16,12 @@ const SmallImage = styled("img")({
   border: "1px solid #E9E9E9",
 });
 
-const SmallImageContainer = styled(Grid)({
+const SmallImageContainer = styled(Grid)(({ theme }) => ({
   flexDirection: "column",
-});
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "row",
+  },
+}));
 
 const BigImage = styled("img")({
   height: 320,
@@ -36,7 +43,7 @@ const BigImageWrapper = styled(Grid)({
 
 export const ProductImages = () => {
   return (
-    <Grid container spacing={2}>
+    <ContentWrapper container spacing={2}>
       <Grid item>
         <SmallImageContainer container spacing={2}>
           <Grid item>
@@ -51,6 +58,6 @@ export const ProductImages = () => {
         <BigImage src={ProductImg} />
         <ZoomIconStyle src={ZoomIcon} />
       </BigImageWrapper>
-    </Grid>
+    </ContentWrapper>
   );
 };
