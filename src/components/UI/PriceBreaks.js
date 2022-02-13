@@ -18,7 +18,7 @@ const DiscountPrice = styled(Typography)({
 
 export const PriceList = ({ qty, total, disc, currency, unit }) => {
   const discount = (total - disc) / qty;
-  console.log(discount);
+
   return (
     <PriceContainer rowSpacing={2}>
       <Typography variant="body1">{`ex ${qty} ${unit} `}</Typography>
