@@ -7,6 +7,7 @@ import { addToCart } from "../../../Redux/actions/productActions";
 
 const AddIconStyle = styled("img")({
   height: 20,
+  width: 20,
 });
 
 const InputStyle = styled(TextField)({
@@ -40,6 +41,7 @@ export const AddToCart = ({ unit }) => {
         type="number"
         onChange={inputHandle}
         value={qty}
+        InputProps={{ inputProps: { min: 1 } }}
       />
       <PCEstyle variant="h5">{unit}</PCEstyle>
       <Button
