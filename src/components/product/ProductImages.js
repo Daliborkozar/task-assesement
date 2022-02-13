@@ -13,7 +13,7 @@ const ContentWrapper = styled(Grid)(({ theme }) => ({
 const SmallImage = styled("img")({
   maxWidth:70,
   width: '100%',
-  height: 'auto',
+  height: '100%',
   padding: 20,
   border: "1px solid #E9E9E9",
 });
