@@ -32,7 +32,7 @@ const AppBarContainer = styled(AppBar)({
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
-export const Navbar = ({ cartAction }) => {
+export const Navbar = ({ cartAction, ...props }) => {
   const { product } = useSelector((state) => state.product);
 
   return (
