@@ -9,8 +9,7 @@ export const theme = createTheme({
       main: "#E35044",
     },
     sub: "#577F95",
-    graydark: '#a9a9a9'
-    
+    graydark: "#a9a9a9",
   },
 
   typography: {
@@ -76,6 +75,4 @@ export const theme = createTheme({
   shape: {
     borderRadius: 0,
   },
-
 });
-

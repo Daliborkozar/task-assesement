@@ -30,7 +30,6 @@ const PriceContainer = styled(Grid)({
 export const ProductActionArea = ({ cartAction }) => {
   const { product } = useSelector((state) => state.product);
 
-  console.log(cartAction);
   const containerRef = useRef(null);
 
   const callbackFunction = (entries) => {
