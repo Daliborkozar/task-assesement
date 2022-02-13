@@ -11,7 +11,7 @@ const Wrapper = styled(Grid)({
   flexDirection: "column",
   backgroundColor: "#FFFFFF",
   padding: 20,
-  minWidth: 300,
+  maxWidth: 400,
   height: "100%",
 });
 
