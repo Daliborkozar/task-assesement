@@ -36,6 +36,7 @@ export const Navbar = (props) => {
   const { product } = useSelector((state) => state.product);
 
   const { cartAction } = props;
+  console.log(cartAction)
   return (
     <>
       <ElevationScroll {...props}>
@@ -54,7 +55,7 @@ export const Navbar = (props) => {
                   {product?.article?.description_short}
                 </Typography>
               </Grid>
-              {!cartAction ? (
+              { cartAction !== undefined && !cartAction ? (
                 <Grid item >
                   <AddToCart unit={product?.article?.unit} />
                 </Grid>
