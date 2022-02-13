@@ -20,6 +20,7 @@ const SupplierTitle = styled(Typography)({
 
 const DiscountImg = styled("img")({
   height: 13,
+  width: 13,
   marginLeft: 3,
 });
 
