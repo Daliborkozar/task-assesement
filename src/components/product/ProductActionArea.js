@@ -12,7 +12,6 @@ const ProductWrapper = styled(Grid)({
   height: "100%",
   justifyContent: "space-between",
   maxWidth: 500,
-  
 });
 
 const SupplierTitle = styled(Typography)({
@@ -52,16 +51,16 @@ export const ProductActionArea = ({ cartAction }) => {
   }, [containerRef, options]);
 
   return (
-    <ProductWrapper container>
+    <>
       {product?.article && (
-        <>
+        <ProductWrapper container>
           <Grid item>
             <Typography variant="h6">
               {product.article.description_short}
             </Typography>
             <Grid container spacing={1}>
               <Grid item>
-                <Typography color="#A9A9A9">by </Typography>
+                <Typography color="#A9A9A9">by</Typography>
               </Grid>
               <Grid item>
                 <Typography color="sub">{` Supplier ${product.article.supplier_name}`}</Typography>
@@ -91,8 +90,8 @@ export const ProductActionArea = ({ cartAction }) => {
           <Grid item ref={containerRef}>
             <AddToCart unit={product.article.unit} />
           </Grid>
-        </>
+        </ProductWrapper>
       )}
-    </ProductWrapper>
+    </>
   );
 };

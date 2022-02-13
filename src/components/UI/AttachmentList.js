@@ -6,6 +6,7 @@ import AttachmentIcon from "../../resources/icons/attachment.svg";
 
 const AttachImg = styled("img")({
   height: 15,
+  width: 15,
   marginRight: 5,
 });
 

@@ -16,9 +16,9 @@ export const ProductDescription = () => {
   const { product } = useSelector((state) => state.product);
 
   return (
-    <WrapperContainer container spacing={2}>
+    <>
       {product?.article && (
-        <>
+        <WrapperContainer container spacing={2}>
           <Grid item xs={12}>
             <TitleComponent>DESCRIPTION</TitleComponent>
           </Grid>
@@ -29,16 +29,16 @@ export const ProductDescription = () => {
           </Grid>
           <Grid item xs={12} md={12} lg={12}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6} md={5}>
+              <Grid item xs={12} sm={6} md={5} lg={3}>
                 <ProductDetails />
               </Grid>
-              <Grid item xs={12} sm={6} md={5}>
+              <Grid item xs={12} sm={6} md={5} lg={3}>
                 <ProductPricing />
               </Grid>
             </Grid>
           </Grid>
-        </>
+        </WrapperContainer>
       )}
-    </WrapperContainer>
+    </>
   );
 };

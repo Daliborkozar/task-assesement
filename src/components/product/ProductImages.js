@@ -11,7 +11,9 @@ const ContentWrapper = styled(Grid)(({ theme }) => ({
 }));
 
 const SmallImage = styled("img")({
-  height: 70,
+  maxWidth:70,
+  width: '100%',
+  height: 'auto',
   padding: 20,
   border: "1px solid #E9E9E9",
 });
@@ -24,7 +26,9 @@ const SmallImageContainer = styled(Grid)(({ theme }) => ({
 }));
 
 const BigImage = styled("img")({
-  height: 320,
+  width: '100%',
+  height: '100%',
+  maxWidth: 400,
   padding: 50,
   border: "1px solid #E9E9E9",
 });

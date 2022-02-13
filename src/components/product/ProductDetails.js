@@ -11,9 +11,8 @@ const Wrapper = styled(Box)({
   flexDirection: "column",
   backgroundColor: "#FFFFFF",
   padding: 20,
-  minWidth: 300,
   height: "100%",
-  width:'100%'
+  maxWidth: 400,
 });
 
 const TitleContainer = styled(Grid)({
