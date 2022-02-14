@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { RatingStars } from "../UI/Rating";
 import DiscountIcon from "../../resources/icons/discount.svg";
 import { AddToCart } from "./addToCart/AddToCart";
-import data from "../../data.json";
+
 
 const ProductWrapper = styled(Grid)({
   flexDirection: "column",
@@ -72,13 +72,13 @@ export const ProductActionArea = ({ cartAction }) => {
             <Grid item>
               <Grid container spacing={1}>
                 <Grid item>
-                  <Typography>{`${data.article.price.toLocaleString()} ${
+                  <Typography>{`${product.article.price.toLocaleString()} ${
                     data.article.currency
                   }`}</Typography>
                 </Grid>
                 <Grid item>
                   <PriceContainer container>
-                    <Typography color="#A9A9A9">{`+ ${data.article.transport_costs.toLocaleString()} shipping`}</Typography>
+                    <Typography color="#A9A9A9">{`+ ${product.article.transport_costs.toLocaleString()} shipping`}</Typography>
                     <DiscountImg src={DiscountIcon} />
                   </PriceContainer>
                 </Grid>
