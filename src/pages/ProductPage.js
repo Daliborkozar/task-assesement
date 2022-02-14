@@ -4,7 +4,7 @@ import { Product } from "../components/product/Product";
 import { ProductDescription } from "../components/product/ProductDescription";
 import { fetchProduct } from "../Redux/actions/productActions";
 
-export const ProductPage = ({ cartAction }) => {
+const ProductPage = ({ cartAction }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,3 +18,5 @@ export const ProductPage = ({ cartAction }) => {
     </>
   );
 };
+
+export default ProductPage
