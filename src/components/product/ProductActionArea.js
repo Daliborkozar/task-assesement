@@ -73,7 +73,7 @@ export const ProductActionArea = ({ cartAction }) => {
               <Grid container spacing={1}>
                 <Grid item>
                   <Typography>{`${product.article.price.toLocaleString()} ${
-                    data.article.currency
+                    product.article.currency
                   }`}</Typography>
                 </Grid>
                 <Grid item>
