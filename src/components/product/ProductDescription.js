@@ -4,7 +4,6 @@ import { TitleComponent } from "../UI/TitleComponent";
 import { Typography, Grid } from "@mui/material";
 import { ProductDetails } from "./ProductDetails";
 import { ProductPricing } from "./ProductPricing";
-import data from "../../data.json";
 import { useSelector } from "react-redux";
 
 const WrapperContainer = styled(Grid)({
