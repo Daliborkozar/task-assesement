@@ -10,7 +10,9 @@ module.exports = {
   devServer: {
     port: 3000,
     static: true,
-    // directory: path.join(__dirname, "src"),
+    // for routing to work
+    historyApiFallback:true
+    
   },
   module: {
     rules: [
