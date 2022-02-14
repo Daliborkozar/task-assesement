@@ -21,13 +21,14 @@ const CartImage = styled("img")({
 const IconContainer = styled(Grid)({
   alignItems: "center",
   height: "100%",
+  
 });
 
 export const NavbarIcons = () => {
   const { quantity } = useSelector((state) => state.product);
 
   return (
-    <IconContainer container spacing={1}>
+    <IconContainer container >
       <IconImage src={FavoriteIcon} />
       <IconImage src={FactsoftIcon} />
       <Divider orientation="vertical" flexItem />
