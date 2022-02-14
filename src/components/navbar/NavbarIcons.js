@@ -8,13 +8,13 @@ import CartIcon from "../../resources/icons/cart.svg";
 
 const IconImage = styled("img")({
   height: 25,
-  height: 25,
+  width: 25,
   margin: "0 10px",
 });
 
 const CartImage = styled("img")({
   height: 25,
-  height: 25,
+  width: 25,
   marginLeft: 10,
 });
 
