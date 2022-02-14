@@ -26,9 +26,9 @@ const SmallImageContainer = styled(Grid)(({ theme }) => ({
 }));
 
 const BigImage = styled("img")({
+  height: 'auto',
   width: 400,
-  height: "auto",
-  maxWidth: 400,
+  maxWidth: '100%',
   padding: 50,
   border: "1px solid #E9E9E9",
 });
@@ -43,6 +43,7 @@ const ZoomIconStyle = styled("img")({
 
 const BigImageWrapper = styled(Grid)({
   position: "relative",
+  maxWidth: '100%'
 });
 
 export const ProductImages = () => {
