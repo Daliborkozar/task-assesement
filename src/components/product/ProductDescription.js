@@ -17,7 +17,7 @@ export const ProductDescription = () => {
   return (
     <>
       {product?.article && (
-        <WrapperContainer container spacing={2}>
+        <WrapperContainer container >
           <Grid item xs={12}>
             <TitleComponent>DESCRIPTION</TitleComponent>
           </Grid>
