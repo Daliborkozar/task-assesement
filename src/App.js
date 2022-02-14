@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import { Navbar } from "./components/navbar/Navbar";
+import React, { lazy, Suspense, useState } from "react";
 import { Layout } from "./components/UI/Layout";
-import { ProductPage } from "./pages/ProductPage";
+//import ProductPage from "./pages/ProductPage";
 import { Routes, Route } from "react-router-dom";
-import NotFound from "./pages/NotFound";
+//import NotFound from "./pages/NotFound";
+const NotFound = lazy(() => import("./pages/NotFound"));
+const ProductPage = lazy(() => import("./pages/ProductPage"));
 
 const App = () => {
   // Managing state for cart action button to avoid global state for ui
@@ -16,13 +17,24 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout cartAction={isVisible}/>}>
+        <Route path="/" element={<Layout cartAction={isVisible} />}>
           <Route
             path="/"
-            element={<ProductPage cartAction={handleVisibility} />}
+            element={
+              <Suspense fallback={<div>Laoding....</div>}>
+                <ProductPage cartAction={handleVisibility} />
+              </Suspense>
+            }
           />
-          
-          <Route path="*" element={<NotFound />} />
+
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<div>Laoding....</div>}>
+                <NotFound />
+              </Suspense>
+            }
+          />
         </Route>
       </Routes>
     </>
